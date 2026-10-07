@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CBSUA Portal</title>
+
+    <!-- Browser Tab Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/cbsua_logo.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/cbsua_logo.png"
+      sizes="192x192"
+    />
+    <link rel="apple-touch-icon" href="assets/cbsua_logo.png" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body class="bg-gray-100 font-['Lato'] antialiased">
+    <!-- Main Navigation Bar -->
+    <nav class="w-full bg-white shadow-sm sticky top-0 z-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <!-- Logo -->
+          <div class="flex shrink-0 items-center">
+            <a href="assets/cbsua_logo2.png">
+              <img
+                width="178"
+                height="43"
+                src="assets/cbsua_logo2.png"
+                alt="RSU Logo"
+                class="h-10 w-auto"
+              />
+            </a>
+          </div>
+
+          <!-- Desktop Navigation Menu -->
+          <!-- <div class="hidden md:block">
+            <ul class="flex items-center space-x-6">
+              <li>
+                <a
+                  href="https://portal.rsu.edu.ph/public/announcements"
+                  class="text-lg font-normal transition text-emerald-800 hover:text-emerald-500"
+                  id="home-id-desktop"
+                >
+                  ANNOUNCEMENTS
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://portal.rsu.edu.ph/public/faq"
+                  class="text-lg font-normal transition text-emerald-800 hover:text-emerald-500"
+                  id="about-id-desktop"
+                >
+                  FAQs
+                </a>
+              </li>
+            </ul>
+          </div> -->
+
+          <!-- Mobile Menu Trigger Icon -->
+          <!-- <div class="flex md:hidden">
+            <button
+              type="button"
+              class="inline-flex items-center justify-center p-2 text-emerald-900 hover:text-emerald-700 focus:outline-none text-2xl"
+              id="menu-toggle-mob"
+              aria-label="Open Mobile Menu"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div> -->
+        </div>
+      </div>
+
+      <!-- Mobile Modal Overlay Menu -->
+      <div
+        class="fixed inset-0 z-50 hidden bg-emerald-900 p-6 text-white"
+        id="menu-modal"
+      >
+        <div class="mx-auto flex max-w-7xl items-center justify-between">
+          <!-- Mobile Modal Logo -->
+          <a href="https://portal.rsu.edu.ph">
+            <img
+              loading="lazy"
+              src="assets/rsulogo2.png"
+              alt="RSU Logo White"
+              class="h-10 w-auto brightness-0 invert"
+            />
+          </a>
+          <!-- Close Mobile Menu Button -->
+          <button
+            type="button"
+            class="p-2 text-white hover:text-gray-300 focus:outline-none text-2xl"
+            id="close-btn-mob"
+            aria-label="Close Mobile Menu"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Navigation Links -->
+        <!-- <div class="mt-12">
+          <ul class="flex flex-col space-y-4">
+            <li>
+              <a
+                href="https://portal.rsu.edu.ph/public/announcements"
+                class="text-2xl font-normal text-white transition hover:text-emerald-200"
+                id="home-id-mobile"
+              >
+                ANNOUNCEMENTS
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://portal.rsu.edu.ph/public/faqs"
+                class="text-2xl font-normal text-white transition hover:text-emerald-200"
+                id="about-id-mobile"
+              >
+                FAQs
+              </a>
+            </li>
+          </ul>
+        </div> -->
+      </div>
+    </nav>
+
+    <!-- JavaScript to handle opening and closing -->
+    <!-- <script>
+      const toggleBtn = document.getElementById("menu-toggle-mob");
+      const closeBtn = document.getElementById("close-btn-mob");
+      const menuModal = document.getElementById("menu-modal");
+
+      toggleBtn.addEventListener("click", () => {
+        menuModal.classList.remove("hidden");
+        document.body.classList.add("overflow-hidden");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        menuModal.classList.add("hidden");
+        document.body.classList.remove("overflow-hidden");
+      });
+    </script> -->
+
+    <main
+      id="main-content"
+      class="min-h-screen bg-slate-50 p-4 sm:p-8 lg:p-12 text-white"
+    >
+      <div class="mx-auto max-w-7xl">
+        <!-- Header Section -->
+        <div
+          class="mb-8 flex flex-col md:flex-row md:items-end justify-between border-b border-gray-800 pb-6 gap-4"
+        >
+          <div>
+            <span
+              class="text-xs font-bold tracking-widest text-emerald-500 uppercase"
+              >Dashboard</span
+            >
+            <h1
+              class="mt-1 text-3xl font-black tracking-tight sm:text-4xl text-black"
+            >
+              Quick Access Portals
+            </h1>
+          </div>
+          <p class="text-sm text-gray-700 max-w-md">
+            Select a portal to access university services, administrative
+            controls, and learning environments.
+          </p>
+        </div>
+
+        <!-- 2-Column Responsive Grid -->
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <!-- Card 1: University Information System -->
+          <li>
+            <a
+              href="https://uis.cbsua.edu.ph/"
+              class="group relative flex flex-col justify-end overflow-hidden rounded-3xl bg-gray-800 ring-4 ring-white/10 hover:ring-emerald-500/50 shadow-2xl transition-all duration-300 hover:-translate-y-1 h-72 sm:h-80 lg:h-96"
+            >
+              <img
+                src="assets/UIS.jpg"
+                alt="University Information System"
+                class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"
+              ></div>
+
+              <div class="absolute top-6 left-6 flex items-center gap-2">
+                <span
+                  class="inline-flex items-center rounded-full bg-black/50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-200 backdrop-blur-md border border-white/10 group-hover:bg-emerald-600 transition-colors"
+                >
+                  System
+                </span>
+              </div>
+
+              <div
+                class="relative z-10 p-6 sm:p-8 flex items-end justify-between"
+              >
+                <div>
+                  <span
+                    class="text-xs font-semibold text-gray-400 uppercase tracking-widest"
+                    >Information</span
+                  >
+                  <h2
+                    class="text-2xl sm:text-3xl font-black text-white mt-1 group-hover:text-emerald-400 transition-colors"
+                  >
+                    UIS
+                  </h2>
+                </div>
+                <div
+                  class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-md text-white transition-all duration-300 group-hover:bg-emerald-600 group-hover:scale-110"
+                >
+                  <svg
+                    class="h-6 w-6 transition-transform duration-300 group-hover:translate-x-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <!-- Card 2: Financial Management Information System -->
+          <li>
+            <a
+              href="https://fmis.cbsua.edu.ph"
+              class="group relative flex flex-col justify-end overflow-hidden rounded-3xl bg-gray-800 ring-4 ring-white/10 hover:ring-emerald-500/50 shadow-2xl transition-all duration-300 hover:-translate-y-1 h-72 sm:h-80 lg:h-96"
+            >
+              <img
+                src="assets/UAS.jpg"
+                alt="Financial Management Information System"
+                class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"
+              ></div>
+
+              <div class="absolute top-6 left-6 flex items-center gap-2">
+                <span
+                  class="inline-flex items-center rounded-full bg-black/50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-200 backdrop-blur-md border border-white/10 group-hover:bg-emerald-600 transition-colors"
+                >
+                  System
+                </span>
+              </div>
+
+              <div
+                class="relative z-10 p-6 sm:p-8 flex items-end justify-between"
+              >
+                <div>
+                  <span
+                    class="text-xs font-semibold text-gray-400 uppercase tracking-widest"
+                    >Financial</span
+                  >
+                  <h2
+                    class="text-2xl sm:text-3xl font-black text-white mt-1 group-hover:text-emerald-400 transition-colors"
+                  >
+                    FMIS
+                  </h2>
+                </div>
+                <div
+                  class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-md text-white transition-all duration-300 group-hover:bg-emerald-600 group-hover:scale-110"
+                >
+                  <svg
+                    class="h-6 w-6 transition-transform duration-300 group-hover:translate-x-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <!-- Card 3: Human Resource Information System -->
+          <li>
+            <a
+              href="https://hris2.cbsua.edu.ph"
+              class="group relative flex flex-col justify-end overflow-hidden rounded-3xl bg-gray-800 ring-4 ring-white/10 hover:ring-emerald-500/50 shadow-2xl transition-all duration-300 hover:-translate-y-1 h-72 sm:h-80 lg:h-96"
+            >
+              <img
+                src="assets/HRIS.jpg"
+                alt="Human Resource Information System"
+                class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"
+              ></div>
+
+              <div class="absolute top-6 left-6 flex items-center gap-2">
+                <span
+                  class="inline-flex items-center rounded-full bg-black/50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-200 backdrop-blur-md border border-white/10 group-hover:bg-emerald-600 transition-colors"
+                >
+                  Internal
+                </span>
+              </div>
+
+              <div
+                class="relative z-10 p-6 sm:p-8 flex items-end justify-between"
+              >
+                <div>
+                  <span
+                    class="text-xs font-semibold text-gray-400 uppercase tracking-widest"
+                    >Human Resources</span
+                  >
+                  <h2
+                    class="text-2xl sm:text-3xl font-black text-white mt-1 group-hover:text-emerald-400 transition-colors"
+                  >
+                    HRIS
+                  </h2>
+                </div>
+                <div
+                  class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-md text-white transition-all duration-300 group-hover:bg-emerald-600 group-hover:scale-110"
+                >
+                  <svg
+                    class="h-6 w-6 transition-transform duration-300 group-hover:translate-x-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <!-- Card 4: Learning Management System -->
+          <li>
+            <a
+              href="https://lms2.cbsua.edu.ph/"
+              class="group relative flex flex-col justify-end overflow-hidden rounded-3xl bg-gray-800 ring-4 ring-white/10 hover:ring-emerald-500/50 shadow-2xl transition-all duration-300 hover:-translate-y-1 h-72 sm:h-80 lg:h-96"
+            >
+              <img
+                src="assets/LMS.jpg"
+                alt="Learning Management System"
+                class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"
+              ></div>
+
+              <div class="absolute top-6 left-6 flex items-center gap-2">
+                <span
+                  class="inline-flex items-center rounded-full bg-black/50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-200 backdrop-blur-md border border-white/10 group-hover:bg-emerald-600 transition-colors"
+                >
+                  Learning
+                </span>
+              </div>
+
+              <div
+                class="relative z-10 p-6 sm:p-8 flex items-end justify-between"
+              >
+                <div>
+                  <span
+                    class="text-xs font-semibold text-gray-400 uppercase tracking-widest"
+                    >Academic Courses</span
+                  >
+                  <h2
+                    class="text-2xl sm:text-3xl font-black text-white mt-1 group-hover:text-emerald-400 transition-colors"
+                  >
+                    LMS
+                  </h2>
+                </div>
+                <div
+                  class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-md text-white transition-all duration-300 group-hover:bg-emerald-600 group-hover:scale-110"
+                >
+                  <svg
+                    class="h-6 w-6 transition-transform duration-300 group-hover:translate-x-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    <footer
+      id="footer"
+      class="bg-gray-900 text-gray-300 py-12 border-t border-gray-800"
+      itemscope="itemscope"
+      itemtype="https://schema.org/WPFooter"
+      role="contentinfo"
+    >
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <!-- Column 1: Coat of Arms & Legal -->
+          <div class="space-y-4">
+            <img
+              width="150"
+              height="166"
+              src="https://cbsua.edu.ph/wp-content/uploads/2020/11/1200px-Coat_of_arms_of_the_Philippines.svg-271x300.png"
+              class="h-auto max-w-[140px] rounded-lg"
+              alt="Coat of Arms of the Philippines"
+              loading="lazy"
+              decoding="async"
+            />
+            <p class="text-xs text-gray-400 leading-relaxed">
+              <a href="#" class="hover:text-emerald-400 transition-colors">
+                All content is public domain unless otherwise stated.
+              </a>
+            </p>
+          </div>
+
+          <!-- Column 2: Republic of the Philippines -->
+          <div class="space-y-3">
+            <h4 class="text-sm font-bold uppercase tracking-wider text-white">
+              Republic of the Philippines
+            </h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li>
+                <a
+                  href="https://www.officialgazette.gov.ph/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-emerald-400 transition-colors"
+                  >Official Gazette</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://president.gov.ph/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-emerald-400 transition-colors"
+                  >Office of the President</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.gov.ph/directory"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-emerald-400 transition-colors"
+                  >Official Directory</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.officialgazette.gov.ph/calendar/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-emerald-400 transition-colors"
+                  >Official Calendar</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Executive Branch -->
+          <div class="space-y-3">
+            <h4 class="text-sm font-bold uppercase tracking-wider text-white">
+              Executive
+            </h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li>
+                <a
+                  href="https://www.president.gov.ph/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-emerald-400 transition-colors"
+                  >Office of the President</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.ovp.gov.ph/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-emerald-400 transition-colors"
+                  >Office of the Vice President</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.deped.gov.ph/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-emerald-400 transition-colors"
+                  >Department of Education</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.dilg.gov.ph/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-emerald-400 transition-colors"
+                  >Department of Interior and Local Government</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.dof.gov.ph/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-emerald-400 transition-colors"
+                  >Department of Finance</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.doh.gov.ph/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-emerald-400 transition-colors"
+                  >Department of Health</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.dost.gov.ph/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-emerald-400 transition-colors"
+                  >Department of Science and Technology</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.dti.gov.ph/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-emerald-400 transition-colors"
+                  >Department of Trade and Industry</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Legislative, Judiciary & Customer Chat -->
+          <div class="space-y-6">
+            <div class="space-y-3">
+              <h4 class="text-sm font-bold uppercase tracking-wider text-white">
+                Legislative
+              </h4>
+              <ul class="space-y-2 text-sm text-gray-400">
+                <li>
+                  <a
+                    href="https://www.senate.gov.ph/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-emerald-400 transition-colors"
+                    >Senate of the Philippines</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.congress.gov.ph/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-emerald-400 transition-colors"
+                    >House of Representatives</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="space-y-3">
+              <h4 class="text-sm font-bold uppercase tracking-wider text-white">
+                Judiciary
+              </h4>
+              <ul class="space-y-2 text-sm text-gray-400">
+                <li>
+                  <a
+                    href="https://www.sc.judiciary.gov.ph/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-emerald-400 transition-colors"
+                    >Supreme Court</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.ca.judiciary.gov.ph/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-emerald-400 transition-colors"
+                    >Court of Appeals</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.sb.judiciary.gov.ph/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-emerald-400 transition-colors"
+                    >Sandiganbayan</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.cta.judiciary.gov.ph/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-emerald-400 transition-colors"
+                    >Court of Tax Appeals</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.jbc.judiciary.gov.ph/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-emerald-400 transition-colors"
+                    >Judicial Bar and Council</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Facebook Chat Messenger Integration -->
+            <div id="fb-root"></div>
+            <script>
+              window.fbAsyncInit = function () {
+                FB.init({
+                  xfbml: true,
+                  version: "v10.0",
+                });
+              };
+
+              (function (d, s, id) {
+                var js,
+                  fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src =
+                  "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+                fjs.parentNode.insertBefore(js, fjs);
+              })(document, "script", "facebook-jssdk");
+            </script>
+            <div
+              class="fb-customerchat"
+              attribution="setup_tool"
+              page_id="972457112809998"
+              theme_color="#23A455"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Sub-footer Bottom Bar -->
+        <div
+          class="mt-12 border-t border-gray-800 pt-6 text-center text-xs text-gray-500"
+        >
+          <p>
+            &copy; Central Bicol State University of Agriculture. All Rights
+            Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
